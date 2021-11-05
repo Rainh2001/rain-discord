@@ -1,0 +1,52 @@
+.main-container {
+    height: 100vh;
+    display: grid;
+
+    justify-content: stretch;
+    align-items: stretch;
+
+    grid-template-rows: 7.5rem 1fr 7.5rem;
+    grid-template-columns: 10rem 30rem 1fr 30rem;
+
+}
+
+.server-list {
+    background-color: var(--grey-dark-1);
+    grid-row: 1 / -1;
+}
+
+.server {
+
+
+    &__header {
+        background-color: var(--grey-dark-3);
+        border-bottom: 1px solid var(--grey-dark-1-border);
+    }
+
+    &__channel-list {
+        background-color: var(--grey-dark-3);
+        
+    }
+
+    &__text-chat {
+        background-color: var(--grey-dark-4);
+        grid-row: 2 / -1;
+        grid-column: 3 / 4;
+    }
+
+    &__member-list {
+        background-color: var(--grey-dark-3);
+        grid-row: 2 / -1;
+        grid-column: 4 / 5;
+    }
+}
+
+.navbar {
+    background-color: var(--grey-dark-4);
+    border-bottom: 1px solid var(--grey-dark-1-border);
+    grid-column: 3 / -1;
+}
+
+.user-settings {
+    background-color: var(--grey-dark-2);
+}

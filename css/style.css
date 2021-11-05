@@ -9,3 +9,52 @@ html {
 
 body {
   box-sizing: border-box; }
+
+:root {
+  --grey-dark-1: #202225;
+  --grey-dark-2: #292b2f;
+  --grey-dark-3: #2f3136;
+  --grey-dark-4: #36393f;
+  --grey-dark-5: #2e3338;
+  --grey-light-1: #40444b;
+  --grey-light-2: #6f6e63;
+  --grey-light-3: #8e9297;
+  --grey-light-4: #b9bbbe;
+  --grey-dark-1-border: #202225b4; }
+
+.main-container {
+  height: 100vh;
+  display: grid;
+  justify-content: stretch;
+  align-items: stretch;
+  grid-template-rows: 7.5rem 1fr 7.5rem;
+  grid-template-columns: 10rem 30rem 1fr 30rem; }
+
+.server-list {
+  background-color: var(--grey-dark-1);
+  grid-row: 1 / -1; }
+
+.server__header {
+  background-color: var(--grey-dark-3);
+  border-bottom: 1px solid var(--grey-dark-1-border); }
+
+.server__channel-list {
+  background-color: var(--grey-dark-3); }
+
+.server__text-chat {
+  background-color: var(--grey-dark-4);
+  grid-row: 2 / -1;
+  grid-column: 3 / 4; }
+
+.server__member-list {
+  background-color: var(--grey-dark-3);
+  grid-row: 2 / -1;
+  grid-column: 4 / 5; }
+
+.navbar {
+  background-color: var(--grey-dark-4);
+  border-bottom: 1px solid var(--grey-dark-1-border);
+  grid-column: 3 / -1; }
+
+.user-settings {
+  background-color: var(--grey-dark-2); }
