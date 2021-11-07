@@ -113,7 +113,48 @@ body {
 .navbar {
   background-color: var(--grey-dark-4);
   border-bottom: 1px solid var(--grey-dark-1-border);
-  grid-column: 3 / -1; }
+  grid-column: 3 / -1;
+  display: flex;
+  align-items: center; }
+  .navbar__hash {
+    color: var(--grey-light-3);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-right: .6rem;
+    margin-left: 1.5rem; }
+  .navbar__current-channel {
+    font-weight: 500;
+    font-size: 1.65rem;
+    margin-right: auto;
+    color: #fff; }
+  .navbar__icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--grey-light-1);
+    margin-right: 2rem;
+    border-radius: 1rem; }
+  .navbar__search {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    font-size: 1.4rem;
+    background-color: var(--grey-dark-1);
+    padding: 0.5rem;
+    border-radius: .5rem;
+    width: auto;
+    color: var(--grey-light-4); }
+  .navbar__search-input {
+    font-size: 1.4rem;
+    background-color: var(--grey-dark-1);
+    border: none;
+    outline: none;
+    width: 7.5rem;
+    color: var(--grey-light-4);
+    transition: all .3s; }
+  .navbar__search-input:focus {
+    width: 15rem; }
+  .navbar__search span {
+    padding: 0 .5rem; }
 
 .user-settings {
   background-color: var(--grey-dark-2); }
