@@ -30,10 +30,20 @@ body {
 
 @keyframes displayOpacity {
   0% {
-    display: flex;
-    opacity: 0; }
+    opacity: 0;
+    height: 0;
+    display: flex; }
   100% {
     opacity: 1; } }
+
+@keyframes hideOpacity {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    display: none; } }
 
 .server-icon {
   height: 5.5rem;
@@ -53,7 +63,8 @@ body {
     transition: all .2s;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    z-index: 1; }
     .server-icon__icon:hover {
       border-radius: 2rem; }
   .server-icon__icon:hover ~ .server-icon__notification {
@@ -109,10 +120,9 @@ body {
   .server-icon__folder-wrapper .server-icon:first-child {
     margin-top: 0; }
   .server-icon__folder-wrapper > input:not(:checked) ~ .server-icon {
-    display: none;
-    animation-play-state: initial; }
+    animation: hideOpacity .2s linear;
+    animation-fill-mode: both; }
   .server-icon__folder-wrapper > input:checked ~ .server-icon {
-    animation-play-state: running;
     animation: displayOpacity .2s linear; }
   .server-icon__folder-wrapper > input:checked ~ label .server-icon__notification {
     height: 0rem;
@@ -247,7 +257,17 @@ body {
 
 @keyframes displayOpacity {
   0% {
-    display: flex;
-    opacity: 0; }
+    opacity: 0;
+    height: 0;
+    display: flex; }
   100% {
     opacity: 1; } }
+
+@keyframes hideOpacity {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    display: none; } }

@@ -1,9 +1,23 @@
 @keyframes displayOpacity {
     0% {
-        display: flex;
         opacity: 0;
+        height: 0;
+        display: flex;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes hideOpacity {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+        margin: 0;
+        display: none;
     }
 }

@@ -23,6 +23,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 1;
 
         &:hover {
             border-radius: 2rem;
@@ -75,10 +76,6 @@
         border-radius: 2rem;
     }
 
-    &__folder-wrapper > input:checked ~ label &__icon {
-        // background-color: red;
-    }
-
     &__folder-wrapper {
         margin-top: var(--margin-normal);
         position: relative;
@@ -108,12 +105,11 @@
     }
 
     &__folder-wrapper > input:not(:checked) ~ & {
-        display: none;
-        animation-play-state: initial;
+        animation: hideOpacity .2s linear;
+        animation-fill-mode: both;
     }
 
     &__folder-wrapper > input:checked ~ & {
-        animation-play-state: running;
         animation: displayOpacity .2s linear;
     }
 
