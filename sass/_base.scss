@@ -26,7 +26,14 @@ body {
 
 
     --grey-dark-1-border: #202225b4;
+
+    --blue-highlight-1: #3f4581;
+    --blue-highlight-2: #4d549c;
+
+    --margin-normal: 1rem;
 }
 
-
+.margin-bottom-normal {
+    margin-bottom: var(--margin-normal);
+}
 

@@ -1,0 +1,9 @@
+@keyframes displayOpacity {
+    0% {
+        display: flex;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

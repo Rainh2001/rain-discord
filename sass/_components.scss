@@ -1,3 +1,5 @@
+@import "./animations";
+
 ////////////////// 
 // Server Icon
 .server-icon {
@@ -9,10 +11,7 @@
     justify-content: center;
     margin-top: 1rem;
     position: relative;
-
-    &:first-child {
-        margin-bottom: 1rem;
-    }
+    transition: all .2s;
 
     &__icon {
         width: 5.5rem;
@@ -21,6 +20,9 @@
         border-radius: 100%;
         cursor: pointer;
         transition: all .2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             border-radius: 2rem;
@@ -73,7 +75,115 @@
         border-radius: 2rem;
     }
 
-    &--folder {
-        
+    &__folder-wrapper > input:checked ~ label &__icon {
+        // background-color: red;
+    }
+
+    &__folder-wrapper {
+        margin-top: var(--margin-normal);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        & label {
+            width: 100%;
+            display: flex;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 5.5rem;
+            height: 100%;
+            top: 0;
+            border-radius: 100rem;
+            background-color: var(--grey-dark-3);
+        }
+    }
+
+    &__folder-wrapper &:first-child {
+        margin-top: 0;
+    }
+
+    &__folder-wrapper > input:not(:checked) ~ & {
+        display: none;
+        animation-play-state: initial;
+    }
+
+    &__folder-wrapper > input:checked ~ & {
+        animation-play-state: running;
+        animation: displayOpacity .2s linear;
+    }
+
+    &__folder-wrapper > input:checked ~ label &__notification {
+        height: 0rem;
+        opacity: 0;
+    }
+
+    &__folder-wrapper > input:checked ~ label &__icon:hover ~ &__notification {
+        height: 0rem;
+        opacity: 0;
+    }
+
+    &__folder-wrapper > input:checked ~ label &__icon {
+        background-color: var(--grey-dark-3);
+
+        &:hover {
+            background-color: var(--grey-dark-4);
+        }
+    }
+
+    &__folder &__icon {
+        border-radius: 2rem;
+        overflow: hidden;
+        position: relative;
+        background-color: var(--blue-highlight-1);
+
+        &:hover {
+            background-color: var(--blue-highlight-2);
+        }
+    }
+
+    &__image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        transition: transform .2s;
+    }
+
+    &__grid-element {
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 100%;
+        margin: .15rem;
+        background-color: rgb(153, 153, 255);
+
+        & img {
+            height: 100%;
+            border-radius: inherit;
+        }
+    }
+
+    &__folder-wrapper > input:checked ~ label &__image-grid {
+        transform: translateY(120%);
+    }
+
+    &__folder-wrapper > input:checked ~ label &__folder-icon {
+        transform: translateY(0);
+    }
+
+    &__folder-icon {
+        width: 3rem;
+        height: 3rem;
+        background-color: rgb(59, 167, 255);
+        position: absolute;
+        border-radius: 1rem;
+        transform: translateY(-4.5rem);
+        transition: transform .2s;
     }
 }
+
